@@ -74,6 +74,90 @@ curl -fsSL https://raw.githubusercontent.com/Beseder00/bootstrap-mac-setup/main/
 ✅ **Opt-in** - Optional installs require confirmation
 ✅ **Append-only** - Never overwrites your configs
 
+## Advanced Features
+
+### UltraMode Daemon (Weekly Auto-Reapply)
+
+Automatically reapplies UltraMode settings every Monday at 9:00 AM:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Beseder00/bootstrap-mac-setup/main/install-daemon.sh | bash
+```
+
+**What it does:**
+* Checks and reapplies file descriptor limits
+* Verifies Node.js memory settings
+* Ensures watcher optimizations are active
+* Logs all actions to `~/.ultramode/daemon.log`
+
+**Uninstall:**
+```bash
+launchctl unload ~/Library/LaunchAgents/com.trendscoded.ultramode.daemon.plist
+```
+
+### Raycast GUI Dashboard
+
+Beautiful GUI dashboard for managing UltraMode:
+
+```bash
+# Install Raycast extension
+curl -fsSL https://raw.githubusercontent.com/Beseder00/bootstrap-mac-setup/main/raycast-ultramode.json -o ~/.config/raycast/extensions/ultramode.json
+
+# Or use the script directly
+bash raycast-ultramode-dashboard.sh status
+bash raycast-ultramode-dashboard.sh reapply
+bash raycast-ultramode-dashboard.sh logs
+```
+
+**Features:**
+* Real-time status display
+* One-click reapply settings
+* View daemon logs
+* Install/uninstall daemon
+
+### Auto-Heal on macOS Updates
+
+Automatically detects macOS system updates and reapplies settings:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Beseder00/bootstrap-mac-setup/main/install-autoheal.sh | bash
+```
+
+**What it does:**
+* Checks macOS version every hour
+* Detects when system updates reset settings
+* Automatically reapplies user-level optimizations
+* Logs all actions to `~/.ultramode/auto-heal.log`
+
+**Note:** System-level changes (sysctl) may require manual re-run of `ultramode-install.sh` after major macOS updates.
+
+## Complete Installation Guide
+
+### 1. Basic Setup
+```bash
+curl -fsSL https://raw.githubusercontent.com/Beseder00/bootstrap-mac-setup/main/install.sh | bash
+```
+
+### 2. UltraMode (System-Level)
+```bash
+curl -fsSL https://raw.githubusercontent.com/Beseder00/bootstrap-mac-setup/main/ultramode-install.sh | sudo bash
+```
+
+### 3. Install Daemon (Optional)
+```bash
+curl -fsSL https://raw.githubusercontent.com/Beseder00/bootstrap-mac-setup/main/install-daemon.sh | bash
+```
+
+### 4. Install Auto-Heal (Optional)
+```bash
+curl -fsSL https://raw.githubusercontent.com/Beseder00/bootstrap-mac-setup/main/install-autoheal.sh | bash
+```
+
+### 5. Check Status
+```bash
+curl -fsSL https://raw.githubusercontent.com/Beseder00/bootstrap-mac-setup/main/extreme-status.sh | bash
+```
+
 ## Repository
 
 https://github.com/Beseder00/bootstrap-mac-setup

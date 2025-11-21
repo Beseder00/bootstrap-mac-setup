@@ -1,0 +1,40 @@
+{
+  "title": "UltraMode Dashboard",
+  "description": "View and manage UltraMode AI engineering optimizations",
+  "icon": "⚡",
+  "actions": [
+    {
+      "title": "Show Status",
+      "command": "bash",
+      "arguments": [
+        "/Users/adamdorfman/Documents/bootstrap-mac-setup/raycast-ultramode-dashboard.sh",
+        "status"
+      ]
+    },
+    {
+      "title": "Reapply Settings Now",
+      "command": "bash",
+      "arguments": [
+        "/Users/adamdorfman/Documents/bootstrap-mac-setup/raycast-ultramode-dashboard.sh",
+        "reapply"
+      ]
+    },
+    {
+      "title": "Install Weekly Daemon",
+      "command": "bash",
+      "arguments": [
+        "/Users/adamdorfman/Documents/bootstrap-mac-setup/raycast-ultramode-dashboard.sh",
+        "install-daemon"
+      ]
+    },
+    {
+      "title": "View Logs",
+      "command": "bash",
+      "arguments": [
+        "/Users/adamdorfman/Documents/bootstrap-mac-setup/raycast-ultramode-dashboard.sh",
+        "logs"
+      ]
+    }
+  ]
+}
+
